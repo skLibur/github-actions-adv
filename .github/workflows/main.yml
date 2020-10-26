@@ -28,14 +28,8 @@ jobs:
           echo "Our current path is:"
           pwd
           echo "Content of folder is:"
-          ls -la
+          ls -a
           echo "Zipping the folder to achive:"  
           zip -r ${{ env.DEPLOY_PACKAGE_NAME }} ./ -x *.git*
           echo "New content of folder is:"
-          ls -la
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          ls -a
