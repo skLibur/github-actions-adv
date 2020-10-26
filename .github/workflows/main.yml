@@ -19,12 +19,17 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Checks-out our repository "actions/checkout"
+      - name: Fetching our repo to Ubuntu docker container!
         uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
       - name: Create ZIP deployment package
-        run:  zip -r ${{ env.DEPLOY_PACKAGE_NAME }} ./ -x *.git*
+        run: |
+          echo "Our current path is:"
+          pwd
+          echo "Content of folder is:"
+          ls -la  
+          zip -r ${{ env.DEPLOY_PACKAGE_NAME }} ./ -x *.git*
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
