@@ -19,7 +19,7 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Checks-out our repository: actions/checkout@v2
+      - name: Checks-out our repository "actions/checkout"
         uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
