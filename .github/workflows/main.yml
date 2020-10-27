@@ -70,8 +70,7 @@ jobs:
           --description "commit-${{ github.sha }}"
 
       - name: Deploy Elasticbeanstalk application
-        run: aws elasticbeanstalk update-environment \
-          --environment-name ${{ env.EB_ENVIRONMENT_NAME }} \
+        run: aws elasticbeanstalk update-environment --environment-name ${{ env.EB_ENVIRONMENT_NAME }} \
           --version-label "ver-${{ github.sha }}"
 
       - name: Printing message at finish
